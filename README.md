@@ -1,5 +1,3 @@
-# xc_data
-This is the starter data for the 2024 SI339 web project. 
-You can use pages about athletes, or pages about meets.  Either option is missing a home page.
-
-You can modify the .py files if you want to set up your site differently.
+# SI339 Client Project Deliverable 3
+This is the mobile website for the 2024 SI339 client project. 
+This site is athlete-focused and includes pages for each individual athlete.
