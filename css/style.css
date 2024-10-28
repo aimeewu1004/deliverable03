@@ -1,0 +1,364 @@
+/* ----------------------------- GENERAL (BODY, LINKS) ----------------------------- */
+
+/* reset margin, padding, box-sizing */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* responsive font size */
+html {
+    font-size: clamp(10px, 1vw + 1rem, 20px);
+}
+
+/* set the font to Poppins, set background color to white, text to gray */
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.5;
+    background-color: white;
+    color: #3b3b3b;
+}
+
+/* set background color and padding for skip-to-main btn */
+.skip-to-main{
+    background-color: #3b3b3b;
+    padding: 10px;
+}
+
+/* set color of skip-to-main btn to be white */
+.skip-to-main a {
+    color: white;
+}
+
+/* set footer text to be white and centered */
+.footer {
+    width: 100%;
+    background-color: #3b3b3b;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    overflow: auto;
+}
+
+/* set footer link text to be white */
+.footer a {
+    color: white;
+}
+
+/* set visited link color to blue */
+a:visited {
+    color: #3399cc;
+}
+
+/* ----------------------------- ANIMATIONS ----------------------------- */
+
+/* add fade in animation for h1 headings */
+h1 {
+    opacity: 0;
+    animation: fadeIn 1s ease forwards;
+}
+
+/* add bounce in animation for athlete profile images */
+.profile img {
+    animation: bounceIn 0.8s ease-out forwards;
+}
+
+/* fade in animation keyframe */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* bounce in animation keyframe */
+@keyframes bounceIn {
+    0% { 
+        transform: scale(0.5); opacity: 0;
+    }
+    70% {
+        transform: scale(1.05); opacity: 1;
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* omit animations for prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+    h1 {
+        animation: none;
+        opacity: 1;
+    }
+
+    .profile img {
+        animation: none;
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* ----------------------------- HOME TEAM PHOTO ----------------------------- */
+
+/* set background photo of top of home page to team photo */
+.home {
+    position: relative;
+    height: 50vh;
+    width: 100%;
+    background-image: url(../images/skyline_team.jpg);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    text-align: center;
+    color: white;
+    background-color: #3b3b3b;
+}
+
+/* position the Skyline Cross Country Athlete Portal text */
+#athlete-portal {
+    font-size: 1.4rem;
+    position: absolute;
+    top: 22%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    text-align: center;
+}
+
+/* ----------------------------- NAVIGATION BAR ----------------------------- */
+
+/* space header items equally */
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    background-color: #3b3b3b;
+}
+
+/* set size of logo in header */
+.header .logo img {
+    width: 10vw;
+    max-width: 85px;
+    min-width: 55px;
+    border-radius: 50%;
+    border: 3px solid white;
+}
+
+/* set margins for home link in nav bar */
+#home-btn {
+    margin-right: 1rem;
+    margin-left: 1rem;
+}
+
+/* align nav bar items */
+.nav-bar {
+    width: 100%;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    font-size: 1rem;
+}
+
+/* set nav bar links to white */
+.nav-bar li a {
+    color: white;
+    text-decoration: none;
+}
+
+/* set Men's Team and Women's Team dropdowns */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* set Men's Team and Women's Team dropdowns once clicked */
+.dropdown summary {
+    color: white;
+    padding: 1rem;
+    font-size: 1rem;
+    cursor: pointer;
+    display: block;
+    border-radius: 4px;
+    position: relative;
+    list-style: none;
+}
+
+/* styles and alignment for dropdown menu */
+.dropdown ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #fff;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    overflow: hidden;
+    width: 100%;
+    z-index: 1;
+}
+  
+/* show dropdown menu when details are open */
+.dropdown[open] ul {
+    display: block;
+}
+
+/* set dropdown links (athlete names) to gray */
+.dropdown ul li a {
+    color: #3b3b3b;
+    display: block;
+    text-decoration: none;
+    padding: 0.3rem;
+    font-size: 0.9rem;
+}
+
+/* set background of hovered athlete link to gray */
+.dropdown ul li a:hover {
+    background-color: #f0f0f0;
+}
+
+/* set color of visited athlete links to blue */
+.dropdown ul li a:visited {
+    color: #3399cc;
+}
+
+/* ----------------------------- HOME FEATURE CARDS ----------------------------- */
+
+/* align features section */
+.features {
+    width: 100%;
+    text-align: center; 
+    padding: 2rem 1rem;
+    background-color: white;
+}
+
+/* set size and color of features h2 heading */
+.features h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    color:#3b3b3b;
+}
+
+/* column flex display for feature cards */
+.card-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+/* set color and border radius for feature cards */
+.card {
+    background-color: #005C8A; 
+    color: white;
+    border: 1px solid #668c9f;
+    border-radius: 8px; 
+    padding: 1rem; 
+    width: 90%;
+    box-shadow: 0 2px 4px #2e4046; 
+}
+
+/* set margin under feature card titles */
+.card h3 {
+    margin-bottom: 0.5rem;
+}
+
+/* ----------------------------- ATHLETE PAGES ----------------------------- */
+
+/* set flex disaply for athlete name + picture (profile) section */
+.profile {
+    display: flex; 
+    flex-direction: column;
+    align-items: center; 
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #ced5d8;
+    max-width: 90vw; 
+    margin: 1rem auto;
+    padding: 20px;
+}
+
+/* style athlete image w/ rounded border */
+.profile img {
+    max-width: 100%;
+    height: auto; 
+    border: 10px #3399cc ridge;
+    border-radius: 10%;
+    margin-bottom: 0.5rem;
+}
+
+/* set athlete name font size */
+.profile h1 {
+    margin-bottom: 0.5rem;
+    font-size: 1.4rem;
+    text-align: center;
+}
+
+/* set size constraint for table sections */
+#athlete-sr-table,
+#athlete-result-table {
+    width: 90vw;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+/* set margin for bottom table */
+#athlete-result-table {
+    margin-bottom: 1rem;
+}
+
+/* set font size for table h2 headings */
+#athlete-sr-table h2,
+#athlete-result-table h2 {
+    margin: 0.5rem;
+    font-size: 1.4rem;
+    text-align: center;
+}
+
+/* set table spacing, border, color */
+table {
+    width: 100%;
+    border-spacing: 0;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    background-color: #ced5d8;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* allow for scroll on Race Results table */
+#athlete-result-table table {
+    overflow-x: auto;
+    display: block;
+    width: 100%;
+}
+
+/* set table links to gray */
+table a {
+    color: #3b3b3b;
+}
+
+/* set border, padding for table cells */
+th, td {
+    border: 1px solid #005C8A;
+    padding: 10px;
+    text-align: left; 
+}
+
+/* set background color, font size, for table headers */
+th {
+    background-color: #005C8A;
+    color: white;
+    font-weight: normal;
+    font-size: 1rem;
+}
+
+/* set every other table row to white background */
+tr:nth-child(even) {
+    background-color: white;
+}
