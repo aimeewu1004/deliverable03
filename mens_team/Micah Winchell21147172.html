@@ -112,12 +112,16 @@
       </ul>
    </nav>
    </header>
-   <header class="profile">
-      <!--Athlete would input headshot-->
-       <h1>Micah Winchell</h1>
-      <img src="/deliverable03/images/profiles/21147172.jpg" alt="Athlete headshot" width="200"> 
-   </header>
+   
    <main id = "main">
+      <section class="profile">
+         <div class="profile-card">
+            <!--Athlete would input headshot-->
+            <h1>Micah Winchell</h1>
+            <img src="/deliverable03/images/profiles/21147172.jpg" alt="Athlete headshot" > 
+         </div>
+      </section>
+   
       <section id= "athlete-sr-table">
          <h2>Athlete's Seasonal Records (SR) By Year</h2>
             <table>
@@ -373,6 +377,29 @@
 
 
                      </footer>
+               
+               <script>
+                  document.addEventListener("DOMContentLoaded", function() {
+                     const links = document.querySelectorAll(".dropdown ul li a"); // Selects all dropdown links
+                     const currentURL = window.location.href; // Get the current page URL
+                     links.forEach(link => {
+                        // Check if the link href matches the current URL
+                        if (link.href === currentURL) {
+                              link.classList.add("current-page"); // Add the class to the matching link
+                        }
+                     });
+                  });
+                  
+                  // Select all images on the page
+                  document.querySelectorAll('img').forEach(img => {
+                     img.onerror = function() {
+                        this.onerror = null; // Prevents infinite loop if default image missing
+                        this.src = "/deliverable03/images/default_image.jpg";
+                        this.alt = ""
+                     };
+                  });
+               </script>           
+                       
                </body>
          </html>
    
