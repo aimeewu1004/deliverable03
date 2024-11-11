@@ -118,48 +118,60 @@
         </nav>
    </header>
 
-   <section class="home">
-        <div id="athlete-portal">
-            <h1>Skyline Cross Country Athlete Portal</h1>
-        </div>
-   </section>
+   <main id="main">
+        <section class="home">
+            <div id="athlete-portal">
+                <h1>Skyline Cross Country Athlete Portal</h1>
+            </div>
+        </section>
 
-   <main id="main" class="features">
-        <h2>Explore Your Stats</h2>
-        <div class="card-container">
-            <div class="card">
-                <h3>Season Records</h3>
-                <p>View your overall season records.</p>
+        <section class="features">
+            <h2>Explore Your Stats</h2>
+            <div class="card-container">
+                <div class="card">
+                    <h3>Season Records</h3>
+                    <p>View your overall season records.</p>
+                </div>
+                <div class="card">
+                    <h3>Race Placements</h3>
+                    <p>Check specific race placements for the season.</p>
+                </div>
+                <div class="card">
+                    <h3>Race Comments</h3>
+                    <p>Read comments and feedback on races.</p>
+                </div>
             </div>
-            <div class="card">
-                <h3>Race Placements</h3>
-                <p>Check specific race placements for the season.</p>
-            </div>
-            <div class="card">
-                <h3>Race Comments</h3>
-                <p>Read comments and feedback on races.</p>
-            </div>
-        </div>
+        </section>
     </main>
 
+    <footer class="footer">
+        <p>
+        Skyline High School<br>
+        <address>
+        2552 North Maple Road<br>
+        Ann Arbor, MI 48103<br><br>
+    
+        <a href = "https://sites.google.com/aaps.k12.mi.us/skylinecrosscountry2021/home">XC Skyline Page</a><br>
+        Follow us on Instagram 
+        <a href = "https://www.instagram.com/a2skylinexc/" aria-label="Instagram">
+        <i class="fa-brands fa-instagram"></i>
+        </a> 
+    
+    </footer>
 
-
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+           const links = document.querySelectorAll(".dropdown ul li a"); // Selects all dropdown links
+           const currentURL = window.location.href; // Get the current page URL
+           links.forEach(link => {
+              // Check if the link href matches the current URL
+              if (link.href === currentURL) {
+                    link.classList.add("current-page"); // Add the class to the matching link
+              }
+           });
+        });
+     </script> 
 
 </body>
 
-<footer class="footer">
-    <p>
-    Skyline High School<br>
-    <address>
-    2552 North Maple Road<br>
-    Ann Arbor, MI 48103<br><br>
-
-    <a href = "https://sites.google.com/aaps.k12.mi.us/skylinecrosscountry2021/home">XC Skyline Page</a><br>
-    Follow us on Instagram 
-    <a href = "https://www.instagram.com/a2skylinexc/" aria-label="Instagram">
-    <i class="fa-brands fa-instagram"></i>
-    </a> 
-
-
-</footer>
 </html>
