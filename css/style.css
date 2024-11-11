@@ -12,43 +12,260 @@ html {
     font-size: clamp(10px, 1vw + 1rem, 20px);
 }
 
-/* set the font to Poppins, set background color to white, text to gray */
+/* set the font to Poppins, line height */
 body {
     font-family: 'Poppins', sans-serif;
     line-height: 1.5;
-    background-color: white;
-    color: #3b3b3b;
 }
 
-/* set background color and padding for skip-to-main btn */
+/* set padding for skip-to-main btn */
 .skip-to-main{
-    background-color: #3b3b3b;
     padding: 10px;
 }
 
-/* set color of skip-to-main btn to be white */
-.skip-to-main a {
-    color: white;
-}
-
-/* set footer text to be white and centered */
+/* set footer text to be centered */
 .footer {
     width: 100%;
-    background-color: #3b3b3b;
-    color: white;
     padding: 20px;
     text-align: center;
     overflow: auto;
 }
 
-/* set footer link text to be white */
-.footer a {
+/* ----------------------------- HOME TEAM PHOTO ----------------------------- */
+
+/* set background photo of top of home page to team photo */
+.home {
+    position: relative;
+    height: 50vh;
+    width: 100%;
+    background-image: url(../images/skyline_team.jpg);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    text-align: center;
     color: white;
+    background-color: #3b3b3b;
 }
 
-/* set visited link color to blue */
-a:visited {
-    color: #3399cc;
+/* position the Skyline Cross Country Athlete Portal text */
+#athlete-portal {
+    font-size: 1.5rem;
+    position: absolute;
+    top: 22%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    text-align: center;
+}
+
+/* ----------------------------- NAVIGATION BAR ----------------------------- */
+
+/* space header items equally */
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+}
+
+/* set size of logo in header */
+.header .logo img {
+    width: 10vw;
+    max-width: 85px;
+    min-width: 55px;
+    border-radius: 50%;
+}
+
+/* set margins for home link in nav bar */
+#home-btn {
+    padding: 1rem;
+}
+
+/* align nav bar items */
+.nav-bar {
+    width: 100%;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    font-size: 1rem;
+}
+
+/* set nav bar links to have no underline */
+.nav-bar li a {
+    text-decoration: none;
+}
+
+/* set Men's Team and Women's Team dropdown position/display */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* set Men's Team and Women's Team dropdowns once clicked */
+.dropdown summary {
+    padding: 1rem;
+    font-size: 1rem;
+    cursor: pointer;
+    display: block;
+    border-radius: 4px;
+    position: relative;
+    list-style: none;
+}
+
+/* styles and alignment for dropdown menu */
+.dropdown ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    overflow-y: auto;
+    width: 100%;
+    max-height: 60vh;
+    z-index: 1;
+}
+  
+/* show dropdown menu when details are open */
+.dropdown[open] ul {
+    display: block;
+}
+
+/* set dropdown links (athlete names) styling */
+.dropdown ul li a {
+    display: block;
+    text-decoration: none;
+    padding: 0.3rem;
+    font-size: 0.9rem;
+}
+
+/* ----------------------------- HOME FEATURE CARDS ----------------------------- */
+
+/* align features section */
+.features {
+    width: 100%;
+    text-align: center; 
+    padding-top: 2rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-bottom: 2.4rem;
+}
+
+/* set size of features h2 heading */
+.features h2 {
+    font-size: 1.4rem;
+    margin-bottom: 1.5rem;
+}
+
+/* column flex display for feature cards */
+.card-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+/* set color and border radius for feature cards */
+.card {
+    border-radius: 8px; 
+    padding: 1rem; 
+    width: 90%;
+    flex: 1;
+}
+
+/* set margin under feature card titles */
+.card h3 {
+    margin-bottom: 0.5rem;
+}
+
+/* ----------------------------- ATHLETE PAGES ----------------------------- */
+
+/* set flex display for athlete name + picture (profile) section */
+.profile {
+    display: flex; 
+    flex-direction: column;
+    align-items: center; 
+    overflow: hidden;
+    padding: 20px;
+}
+
+.profile-card {
+    display: flex; 
+    flex-direction: column;
+    align-items: center; 
+    border-radius: 8px; 
+    padding: 1rem; 
+    width: 90vw;
+}
+
+/* style athlete image w/ circle border */
+.profile img {
+    width: 65vw;
+    max-width: 350px;
+    height: auto; aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-bottom: 0.5rem;
+}
+
+/* set athlete name font size */
+.profile h1 {
+    margin-bottom: 0.5rem;
+    font-size: 1.6rem;
+    text-align: center;
+}
+
+/* set size constraint for table sections */
+#athlete-sr-table,
+#athlete-result-table {
+    width: 90vw;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+/* set margin for bottom table */
+#athlete-result-table {
+    padding-bottom: 1rem;
+}
+
+/* set font size for table h2 headings */
+#athlete-sr-table h2,
+#athlete-result-table h2 {
+    padding-top: 1rem;
+    font-size: 1.4rem;
+    text-align: center;
+}
+
+/* set table spacing, border */
+table {
+    width: 100%;
+    border-spacing: 0;
+    border-collapse: separate;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* allow for scroll on Race Results table */
+#athlete-result-table table {
+    overflow-x: auto;
+    display: block;
+    width: 100%;
+}
+
+/* set padding for table cells */
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+
+/* set font size for table headers */
+th {
+    font-weight: normal;
+    font-size: 1rem;
 }
 
 /* ----------------------------- ANIMATIONS ----------------------------- */
@@ -87,6 +304,8 @@ h1 {
     }
 }
 
+/* ----------------------------- MEDIA QUERIES ----------------------------- */
+
 /* omit animations for prefers-reduced-motion */
 @media (prefers-reduced-motion: reduce) {
     h1 {
@@ -101,264 +320,176 @@ h1 {
     }
 }
 
-/* ----------------------------- HOME TEAM PHOTO ----------------------------- */
+/* light mode color scheme: light backgrounds and dark text */
+@media (prefers-color-scheme: light) {
+    /* set background color to white */
+    html,
+    .body,
+    #main,
+    .header,
+    .profile,
+    .features,
+    .dropdown ul,
+    tr:nth-child(even) {
+        background-color: white;
+    }
 
-/* set background photo of top of home page to team photo */
-.home {
-    position: relative;
-    height: 50vh;
-    width: 100%;
-    background-image: url(../images/skyline_team.jpg);
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
-    text-align: center;
-    color: white;
-    background-color: #3b3b3b;
+    #athlete-portal h1 {
+        color: white;
+    }
+
+    /* set logo border to blue */
+    .header .logo img {
+        border: 3px solid #005C8A;
+    }
+
+    /* set text color to dark gray */
+    h1, h2, h3,
+    th, td,
+    .body,
+    .footer,
+    .footer a,
+    table,
+    table a,
+    .features,
+    .nav-bar li a,
+    .skip-to-main a,
+    .dropdown summary,
+    .dropdown ul li a {
+        color: #3b3b3b;
+    }
+
+    /* set background of hovered athlete link to gray */
+    .dropdown ul li a:hover {
+        background-color: #f0f0f0;
+    }
+
+    /* set background color to light blue */
+    th,
+    .card,
+    .footer,
+    .current-page,
+    .profile-card,
+    .skip-to-main {
+        background-color: #badced;
+    }
+
+    /* set border radius and shadow color for feature cards */
+    .card {
+        border: 1px solid #668c9f;
+        box-shadow: 0 2px 4px #2e4046; 
+    }
+
+    /* set visited link color to dark blue */
+    a:visited {
+        color: #005C8A;
+    }
+
+    /* set border of profile image to dark blue */
+    .profile img {
+        border: 10px #005C8A solid;
+    }
+
+    /* set table background to light gray */
+    table {
+        background-color: #e4e8ea;
+        border: 4px solid #badced;
+    }
 }
 
-/* position the Skyline Cross Country Athlete Portal text */
-#athlete-portal {
-    font-size: 1.4rem;
-    position: absolute;
-    top: 22%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 100%;
-    text-align: center;
+/* dark mode color scheme: dark backgrounds and light text */
+@media (prefers-color-scheme: dark) {
+    /* set background color to dark gray */
+    html,
+    .body,
+    #main,
+    .header,
+    .profile,
+    .features,
+    .dropdown ul,
+    tr:nth-child(even) {
+        background-color: #3b3b3b;
+    }
+
+    /* set logo border to white */
+    .header .logo img {
+        border: 3px solid white;
+    }
+
+    /* set text color to white */
+    h1, h2, h3,
+    th, td,
+    .body,
+    .footer,
+    .footer a,
+    table,
+    table a,
+    .features,
+    .nav-bar li a,
+    .skip-to-main a,
+    .dropdown summary,
+    .dropdown ul li a {
+        color: white;
+    }
+
+    /* set background of hovered athlete link to lighter gray */
+    .dropdown ul li a:hover {
+        background-color: #595959;
+    }
+
+    /* set background color to dark blue */
+    th,
+    .card,
+    .footer,
+    .current-page,
+    .profile-card,
+    .skip-to-main {
+        background-color: #005C8A;
+    }
+
+    /* set border radius and shadow color for feature cards */
+    .card {
+        border: 1px solid #badced;
+        box-shadow: 0 2px 4px white; 
+    }
+
+    /* set visited link color to light blue */
+    a:visited {
+        color: #badced;
+    }
+
+    /* set border of profile image to light blue */
+    .profile img {
+        border: 10px #badced solid;
+    }
+
+    /* set table background and border */
+    table {
+        background-color: #595959;
+        border: 4px solid #005C8A;
+    }
 }
 
-/* ----------------------------- NAVIGATION BAR ----------------------------- */
-
-/* space header items equally */
-.header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 1rem;
-    background-color: #3b3b3b;
+/* change select styles for tablet view */
+@media (min-width: 768px) {
+    .card-container {
+        display: flex;
+        flex-direction: row;
+        align-items: stretch;
+        gap: 1rem;
+    }
 }
 
-/* set size of logo in header */
-.header .logo img {
-    width: 10vw;
-    max-width: 85px;
-    min-width: 55px;
-    border-radius: 50%;
-    border: 3px solid white;
-}
+/* change select styles for desktop view */
+@media (min-width: 1024px) {
+    .card-container {
+        display: flex;
+        flex-direction: row;
+        align-items: stretch;
+        gap: 1rem;
+    }
 
-/* set margins for home link in nav bar */
-#home-btn {
-    margin-right: 1rem;
-    margin-left: 1rem;
-}
-
-/* align nav bar items */
-.nav-bar {
-    width: 100%;
-    list-style: none;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    font-size: 1rem;
-}
-
-/* set nav bar links to white */
-.nav-bar li a {
-    color: white;
-    text-decoration: none;
-}
-
-/* set Men's Team and Women's Team dropdowns */
-.dropdown {
-    position: relative;
-    display: inline-block;
-}
-
-/* set Men's Team and Women's Team dropdowns once clicked */
-.dropdown summary {
-    color: white;
-    padding: 1rem;
-    font-size: 1rem;
-    cursor: pointer;
-    display: block;
-    border-radius: 4px;
-    position: relative;
-    list-style: none;
-}
-
-/* styles and alignment for dropdown menu */
-.dropdown ul {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background-color: #fff;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    border-radius: 4px;
-    overflow: hidden;
-    width: 100%;
-    z-index: 1;
-}
-  
-/* show dropdown menu when details are open */
-.dropdown[open] ul {
-    display: block;
-}
-
-/* set dropdown links (athlete names) to gray */
-.dropdown ul li a {
-    color: #3b3b3b;
-    display: block;
-    text-decoration: none;
-    padding: 0.3rem;
-    font-size: 0.9rem;
-}
-
-/* set background of hovered athlete link to gray */
-.dropdown ul li a:hover {
-    background-color: #f0f0f0;
-}
-
-/* set color of visited athlete links to blue */
-.dropdown ul li a:visited {
-    color: #3399cc;
-}
-
-/* ----------------------------- HOME FEATURE CARDS ----------------------------- */
-
-/* align features section */
-.features {
-    width: 100%;
-    text-align: center; 
-    padding: 2rem 1rem;
-    background-color: white;
-}
-
-/* set size and color of features h2 heading */
-.features h2 {
-    font-size: 1.5rem;
-    margin-bottom: 1.5rem;
-    color:#3b3b3b;
-}
-
-/* column flex display for feature cards */
-.card-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-}
-
-/* set color and border radius for feature cards */
-.card {
-    background-color: #005C8A; 
-    color: white;
-    border: 1px solid #668c9f;
-    border-radius: 8px; 
-    padding: 1rem; 
-    width: 90%;
-    box-shadow: 0 2px 4px #2e4046; 
-}
-
-/* set margin under feature card titles */
-.card h3 {
-    margin-bottom: 0.5rem;
-}
-
-/* ----------------------------- ATHLETE PAGES ----------------------------- */
-
-/* set flex disaply for athlete name + picture (profile) section */
-.profile {
-    display: flex; 
-    flex-direction: column;
-    align-items: center; 
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    overflow: hidden;
-    background-color: #ced5d8;
-    max-width: 90vw; 
-    margin: 1rem auto;
-    padding: 20px;
-}
-
-/* style athlete image w/ rounded border */
-.profile img {
-    max-width: 100%;
-    height: auto; 
-    border: 10px #3399cc ridge;
-    border-radius: 10%;
-    margin-bottom: 0.5rem;
-}
-
-/* set athlete name font size */
-.profile h1 {
-    margin-bottom: 0.5rem;
-    font-size: 1.4rem;
-    text-align: center;
-}
-
-/* set size constraint for table sections */
-#athlete-sr-table,
-#athlete-result-table {
-    width: 90vw;
-    margin: 0 auto;
-    overflow: hidden;
-}
-
-/* set margin for bottom table */
-#athlete-result-table {
-    margin-bottom: 1rem;
-}
-
-/* set font size for table h2 headings */
-#athlete-sr-table h2,
-#athlete-result-table h2 {
-    margin: 0.5rem;
-    font-size: 1.4rem;
-    text-align: center;
-}
-
-/* set table spacing, border, color */
-table {
-    width: 100%;
-    border-spacing: 0;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-    background-color: #ced5d8;
-    border-radius: 8px;
-    overflow: hidden;
-}
-
-/* allow for scroll on Race Results table */
-#athlete-result-table table {
-    overflow-x: auto;
-    display: block;
-    width: 100%;
-}
-
-/* set table links to gray */
-table a {
-    color: #3b3b3b;
-}
-
-/* set border, padding for table cells */
-th, td {
-    border: 1px solid #005C8A;
-    padding: 10px;
-    text-align: left; 
-}
-
-/* set background color, font size, for table headers */
-th {
-    background-color: #005C8A;
-    color: white;
-    font-weight: normal;
-    font-size: 1rem;
-}
-
-/* set every other table row to white background */
-tr:nth-child(even) {
-    background-color: white;
+    #athlete-result-table table {
+        display: revert;
+    }
 }
